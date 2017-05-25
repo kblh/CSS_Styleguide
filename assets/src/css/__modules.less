@@ -1,0 +1,301 @@
+/*******************************************
+  MODULES
+********************************************/
+
+/*********************
+  background cover
+*********************/
+
+.sx-background-cover {
+  background-color: @bgWhite;
+  background-repeat: no-repeat; background-position: center top;
+  background-size: cover;
+  z-index: -2; position: absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  width: 100%; height: 100%;  
+}
+
+
+
+/*********************
+  header
+*********************/
+
+.sx-header {}
+
+@media only screen and (max-width: @sizeTablet) {
+}
+
+@media only screen and (max-width: @sizeMobile) {
+}
+
+
+/*********************
+  footer
+*********************/
+
+.sx-footer {}
+
+@media only screen and (max-width: @sizeTablet) {
+}
+
+@media only screen and (max-width: @sizeMobile) {
+}
+
+
+
+/*********************
+  pager
+*********************/
+@pgrW: 42px;
+
+.sx-pager { text-align: center; margin-bottom: @margin*2; }
+  .sx-pager a,
+  .sx-pager span { min-width: @pgrW; min-height: @pgrW; padding: 0; font-size: 22px; }
+
+@media only screen and (max-width: @sizeGridMobile) {
+}
+
+
+
+
+/*********************
+  POPUPS
+*********************/
+
+.sx-popup {
+  text-align: left; max-width: 600px;
+  margin: auto; position: relative;
+  overflow: hidden;
+}
+
+.sx-popup-white { background-color: @bgWhite; }
+
+.sx-popup-content { padding: @padding*2; }
+
+.sx-popup-close { 
+  display: inline-block; position: absolute; top: 10px; right: 10px;
+}
+.mfp-close-btn-in .mfp-close { display: none; } /* hide old non modal button */
+
+
+/* fullscreen */
+.sx-popup-fullscreen {
+  text-align: left; width: 100%;
+  margin: auto; position: relative;
+  overflow: hidden; padding: 0 100px;
+}
+.sx-popup-fullscreen .sx-popup-close { position: fixed; font-size: 2em; }
+
+
+
+/*********************
+  collapsible
+*********************/
+
+.sx-collapsible { position: relative; padding: 0; }
+.sx-collapsible-content { display: block; margin-top: @margin*2; }
+
+.sx-collapsible-trigger { 
+  cursor: pointer; padding: @padding*1.5 0;
+  border-top: @borderDefault;
+}
+  .sx-collapsible-trigger:after { 
+    font-family: @fontFontAwesome; content: "\f0d7"; font-size: 20px;
+    position: absolute; top: 15px; right: 10px; color: @primary; 
+  }
+
+.sx-collapsible-active .sx-collapsible-trigger { border-bottom: 1px solid transparent; font-weight: bold; }
+  .sx-collapsible-active .sx-collapsible-trigger:after { font-size: 22px; content: "\f0d8"; }
+
+.sx-collapsible-content { display: none; padding-bottom: @padding*2; }
+
+@media only screen and (max-width: @sizeMobile) {
+  .sx-collapsible-trigger:after { font-size: 24px; }
+}
+
+
+
+/*********************
+  shortened
+*********************/
+
+.sx-shortened { position: relative; overflow: hidden; }
+  .sx-shortened:after {
+    content: " "; width: 100%; height: 50px;
+    position: absolute; bottom: 0; left: 0;
+  }
+.sx-shortened-white:after { .gradient(@startColor: transparent, @endColor: #fff); }
+.sx-shortened-light:after { .gradient(@startColor: transparent, @endColor: @light); }
+
+
+
+
+/*********************
+  OWL carousel
+*********************/
+@bgCarousel: @light;
+
+.sxc-carousel { background-color: @bgCarousel; overflow: hidden; max-height: 355px; }
+.sxc-carousel-local { clear: both; top: -38px; }
+
+@media only screen and (max-width: @sizeMobile) {
+  .sxc-carousel-local { clear: both; top: -18px; }
+}
+
+/* carousel */
+.sx-carousel-item { text-align: center; background-position: center; background-size: cover; }
+  .sx-carousel-item img { /*max-width: 100%;*/ }
+
+/* slider */
+.sx-owl-slider .item { margin-right: @margin; }
+.sx-owl-slider .owl-buttons .owl-prev { left: 10px; }
+.sx-owl-slider .owl-buttons .owl-next { right: 21px; }
+
+@media only screen and (max-width: @sizeTablet) {
+  .sx-owl-slider .owl-buttons .owl-prev { left: 0; }
+  .sx-owl-slider .owl-buttons .owl-next { right: 0; }
+}
+
+
+/* navigation */
+.owl-buttons .owl-prev { position: absolute; left: calc(~'50% - 500px'); top: calc(~'50% - 30px'); }
+.owl-buttons .owl-next { position: absolute; right: calc(~'50% - 500px'); top: calc(~'50% - 30px'); }
+
+@media only screen and (max-width: @sizeTablet) {
+  .owl-buttons .owl-prev { left: 20px; }
+  .owl-buttons .owl-next { right: 20px; }
+}
+
+@media only screen and (max-width: @sizeMobile) {
+  .owl-buttons .owl-prev,
+  .owl-buttons .owl-next { display: none; }
+}
+
+
+
+/*********************
+  OWL carousel 2
+*********************/
+
+.sxc-owl2 { 
+  width: 100%; max-width: @sizeTablet; margin: auto; position: relative; 
+  padding: 0 @padding*2;
+  margin-bottom: 40px; 
+}
+
+/* navigation */
+.sx-owl2-nav { 
+  background-color: @bgLightTransparent; text-decoration: none; border-radius: 50px;
+  width: 50px; height: 50px; font-size: 30px; line-height: 50px; text-align: center;
+  position: absolute; top: calc(~'50% - 25px'); z-index: 9; color: #fff;
+}
+.sx-owl2-nav-prev { left: 30px; }
+.sx-owl2-nav-next { right: 30px; }
+
+/* dots */
+.sxc-owl2 .owl-dots { text-align: center; position: absolute; width: 100%; bottom: 0; }
+.sxc-owl2 .owl-dots .owl-dot { display: inline-block; zoom: 1; }
+
+.sxc-owl2 .owl-dots .owl-dot span {
+  width: 10px; height: 10px; margin: 10px 5px;
+  background: #fff; display: block; border-radius: 30px; 
+}
+.sxc-owl2 .owl-dots .owl-dot.active span, 
+.sxc-owl2 .owl-dots .owl-dot:hover span {
+  background: #333; 
+}
+
+
+
+.sx-square { 
+  width: 175px; height: 100px; 
+  background-color: @primary; color: #fff;
+  text-align: center; line-height: 100px; 
+  font-family: arial black; font-size: 40px;
+}
+.sx-square-3 { background-color: @greyDark; }
+.sx-square-2 { background-color: @primaryLight; }
+.sx-square-flex { width: 100%; }
+
+
+
+
+
+
+
+/*********************
+  easy-pie-chart
+*********************/
+
+.sx-epchart { position: relative; display: inline-block; text-align: center; }
+  .sx-epchart canvas { position: absolute; top: 0; left: 0; }
+
+.sx-epchart-text,
+.sx-epchart-percent { display: inline-block; z-index: 9; color: #333; }
+  .sx-epchart-percent:after { content: '%'; font-size: .8em; }
+
+.sx-epchart-80 { width: 80px; height: 80px; font-size: 25px; }
+  .sx-epchart-80 span { line-height: 80px; }
+
+.sx-epchart-120 { width: 120px; height: 120px; font-size: 35px; }
+  .sx-epchart-120 span { line-height: 120px; }
+
+
+
+
+
+
+/*********************
+  progress
+  http://w3lessons.info/2013/06/04/skill-bar-with-jquery-css3/
+  https://codepen.io/tamak/pen/hzEer
+*********************/
+@pbBC: #eee;
+@pbH: 20px;
+@pbRad: 20px;
+@pbTitW: 100px;
+
+.sx-progress {
+  position: relative; display:block; width: 100%; margin-bottom: @margin;
+  background-color: @pbBC; height: @pbH; .border-radius(@pbRad);
+}
+
+.sx-progress-title {
+  position: absolute; top: 0; left: 0; width: @pbTitW; font-size: .9em;
+  font-weight: @fontBold; color: @textInverse; .border-radius-all(@pbRad,0,0,@pbRad);
+}
+
+.sx-progress-title span {
+  display: block; background-color: rgba(0,0,0,0.2);
+  padding: 0 @padding*2;
+  height: @pbH; line-height: @pbH;
+  .border-radius-all(@pbRad,0,0,@pbRad);
+}
+
+.sx-progress-bar { height: @pbH; width: 0; .border-radius(@pbRad); padding-left: @pbRad; }
+
+.sx-progress-percent {
+  position: absolute; right: @margin; top: 0;
+  height: @pbH; line-height: @pbH; font-size: .8em;
+}
+
+
+.sx-progress-primary .sx-progress-bar { background-color: @primary; }
+.sx-progress-success .sx-progress-bar { background-color: @success; }
+.sx-progress-info .sx-progress-bar { background-color: @info; }
+.sx-progress-danger .sx-progress-bar { background-color: @danger; }
+
+
+
+/* progress tiny */
+@pbtH: 4px;
+
+.sx-progress-tiny { height: @pbtH; top: -@pbH; }
+  .sx-progress-tiny .sx-progress-bar { height: @pbtH; margin-top: @pbH; }
+  .sx-progress-tiny .sx-progress-title { margin-top: -@pbH; font-weight: @fontNormal; }
+    .sx-progress-tiny .sx-progress-title span { background-color: transparent; color: @text; padding: 0; }
+  .sx-progress-tiny .sx-progress-percent { margin-top: -@pbH; }
+
+
+

@@ -1,0 +1,41 @@
+/*******************************************
+  TEST ------ MODULES
+********************************************/
+
+/*********************
+  header
+*********************/
+
+.sx-header {
+  background-image: url("@{imgPath}/radio1.png");
+  background-repeat: no-repeat;
+  background-position: center left;
+  background-color: @primary;
+}
+
+@media only screen and (max-width: @sizeTablet) {
+}
+
+@media only screen and (max-width: @sizeMobile) {
+}
+
+
+/*********************
+  footer
+*********************/
+
+.sx-footer {
+  .border-radius();
+  .box-shadow();
+  .sx-noselect()
+}
+
+@media only screen and (max-width: @sizeTablet) {
+  .sx-footer {
+    font-size: .8em;
+  }
+}
+
+@media only screen and (max-width: @sizeMobile) {
+}
+

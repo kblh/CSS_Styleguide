@@ -1,0 +1,189 @@
+/*******************************************
+  TYPOGRAPHY
+********************************************/
+
+@text: @greyDark;
+@textInverse: #fff;
+
+@link: @primary;
+
+@h1sf: 2.0em;
+@h2sf: 1.6em;
+@h3sf: 1.2em;
+@h4sf: 1.0em;
+
+/* line height */
+@lhCondense: 1.2em;
+@lhNormal: 1.6em;
+@lhDouble: 2.0em;
+
+
+/*********************
+  titles
+*********************/
+
+.sx-h1,
+.sx-h2,
+.sx-h3,
+.sx-h4 { 
+  font-family: @fontTitle; font-weight: @fontLight;
+  line-height: 1.2em; padding: 0; margin: 0;
+}
+
+.sx-h1 { font-size: @h1sf; margin-bottom: @margin*2; }
+.sx-h2 { font-size: @h2sf; }
+.sx-h3 { font-size: @h3sf; }
+.sx-h4 { font-size: @h4sf; }
+
+
+/*********************
+  Text
+*********************/
+
+.sx-text-uppercase { text-transform: uppercase; }
+.sx-text-underline { text-decoration: underline; }
+.sx-text-right { text-align: right; }
+.sx-text-left { text-align: left; }
+.sx-text-smaller { font-size: smaller; }
+.sx-text-larger { font-size: larger; }
+
+.sx-text-shadow { .text-shadow(3px 0 3px rgba(0, 0, 0, 1)); }
+.sx-text-inverse { color: @textInverse; }
+.sx-text-more:after { 
+  font-family: @fontFontAwesome; content: "\f105"; 
+  color: @primary; font-size: 16px; padding-left: 10px;
+}
+
+/* font-size */
+.sx-text-08em { font-size: .8em; }
+.sx-text-09em { font-size: .9em; }
+.sx-text-10em { font-size: 1em; }
+.sx-text-11em { font-size: 1.1em; }
+.sx-text-12em { font-size: 1.2em; }
+.sx-text-13em { font-size: 1.3em; }
+.sx-text-14em { font-size: 1.4em; }
+.sx-text-15em { font-size: 1.5em; }
+.sx-text-16em { font-size: 1.6em; }
+.sx-text-17em { font-size: 1.7em; }
+.sx-text-18em { font-size: 1.8em; }
+.sx-text-19em { font-size: 1.9em; }
+.sx-text-20em { font-size: 2em; }
+.sx-text-22em { font-size: 2.2em; }
+.sx-text-24em { font-size: 2.4em; }
+.sx-text-26em { font-size: 2.6em; }
+.sx-text-28em { font-size: 2.8em; }
+.sx-text-30em { font-size: 3em; }
+
+.sx-text-10px { font-size: 10px; }
+.sx-text-11px { font-size: 11px; }
+.sx-text-12px { font-size: 12px; }
+.sx-text-13px { font-size: 13px; }
+.sx-text-14px { font-size: 14px; }
+.sx-text-15px { font-size: 15px; }
+.sx-text-16px { font-size: 16px; }
+.sx-text-17px { font-size: 17px; }
+.sx-text-18px { font-size: 18px; }
+.sx-text-19px { font-size: 19px; }
+.sx-text-20px { font-size: 20px; }
+.sx-text-21px { font-size: 21px; }
+.sx-text-22px { font-size: 22px; }
+.sx-text-23px { font-size: 23px; }
+.sx-text-24px { font-size: 24px; }
+.sx-text-25px { font-size: 25px; }
+.sx-text-26px { font-size: 26px; }
+.sx-text-27px { font-size: 27px; }
+.sx-text-28px { font-size: 28px; }
+.sx-text-29px { font-size: 29px; }
+.sx-text-30px { font-size: 30px; }
+
+/* color */
+.sx-text-default { color: @text; }
+.sx-text-primary { color: @primary; }
+.sx-text-success { color: @success; }
+.sx-text-danger { color: @danger; }
+.sx-text-info { color: @info; }
+
+/* font-weight */
+.sx-font-extrabold { font-weight: @fontExtraBold; }
+.sx-font-bold { font-weight: @fontBold; }
+.sx-font-normal { font-weight: @fontNormal; }
+.sx-font-medium { font-weight: @fontMedium; }
+.sx-font-light { font-weight: @fontLight; }
+
+/* line-height */
+.sx-line-height-condense { line-height: @lhCondense; }
+.sx-line-height-normal { line-height: @lhNormal; }
+.sx-line-height-double { line-height: @lhDouble; }
+.sx-line-height-100 { line-height: 100%; }
+.sx-line-height-150 { line-height: 150%; }
+.sx-line-height-200 { line-height: 200%; }
+
+
+.sx-text-bullet { position: relative; padding-left: 30px; display: inline-block; }
+  .sx-text-bullet:before { position: absolute; top: 0; left: 10px; content: "\2022 "; font-size: 2em; }
+
+.sx-text-icon { position: relative; padding-left: 30px; display: inline-block; }
+  .sx-text-icon i { position: absolute; top: 0; left: 0px; font-size: 1.2em; }
+
+
+
+/*********************
+  File
+*********************/
+
+.sxb-file { display: inline-block; padding: 5px 10px; border: 1px solid @grey; .border-radius(); margin: 0 @margin @margin 0; }
+
+.sx-file:before { content: "\f016"; color: @grey; font-family: @fontFontAwesome; font-size: .9em; margin-right: 10px; }
+
+.sx-file-pdf:before { content: "\f1c1"; color: @danger; }
+.sx-file-txt:before { content: "\f0f6"; color: @grey; }
+.sx-file-doc:before { content: "\f1c2"; color: @primary; }
+.sx-file-xls:before { content: "\f1c3"; color: @success; }
+
+
+
+
+/*********************
+  Lists
+*********************/
+
+.sx-list { list-style: none; padding: 0; margin: 0; }
+.sx-list li { position: relative; padding-left: 15px; }
+  .sx-list li:before { position: absolute; top: 0; left: 0; content: "\2022 "; color: @primary; font-size: 1.2em; }
+
+.sx-list-horizontal li { list-style: none; display: inline-block; }
+
+.sx-list-chevron {}
+  .sx-list-chevron li { margin: @margin 0; }
+    .sx-list-chevron li:before { content: "\003E"; font-size: 1em; }
+
+
+/*********************
+   Address
+*********************/
+
+.sx-address { white-space: pre-line; line-height: 1.6em; }
+
+
+
+/*********************
+   Lines & Borders
+*********************/
+
+@line: @grey; 
+@lineLight: lighten(@grey, 20%);
+
+@borderDefault: 1px solid @grey;
+@borderLight: 1px solid lighten(@grey, 20%);
+@borderInputs: 1px solid #d6d6d6;
+@borderPrimary: 1px solid @primary;
+
+.sx-line { color: @line; background-color: @line; height: 1px; border: 0px; }
+.sx-line-light { color: @lineLight; background-color: @lineLight; height: 1px; border: 0px; }
+.sx-line-primary { color: @primary; background-color: @primary; height: 1px; border: 0px; }
+
+.sx-border-default { border: @borderDefault; }
+.sx-border-default-bottom { border-bottom: @borderDefault; }
+.sx-border-default-top { border-top: @borderDefault; }
+
+

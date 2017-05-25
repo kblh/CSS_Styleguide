@@ -1,0 +1,440 @@
+/*******************************************
+  FORMS
+********************************************/
+
+@inputHeight: 38px;
+@inputBackgroundC: #e5e5e5;
+@inputHoverC: #eee;
+@inputHighlightC: lighten(@primaryLight, 20%);
+
+/* form-horizontal */
+@fhrW: 605px;
+@fhrMQW: 660px;
+@fhrLabelW: 200px;
+@fhrInputW: 400px;
+@fhrFS: 16px;
+
+
+
+/*********************
+  form-group
+*********************/
+
+.sx-form-group { margin-bottom: @margin; position: relative; }
+.sx-form-group-col { margin-bottom: @gridPadding; position: relative; }
+.sx-form-group-label { text-align: center; height: @inputHeight; line-height: @inputHeight; }
+
+.sx-form-group-top label { vertical-align: top; }
+
+  .sx-form-group .editing-form-control-nested-control { display: inline; }
+
+
+.sx-form-horizontal {
+  .sx-form-group * { font-size: @fhrFS; }
+  .sx-form-group { max-width: @fhrW; font-size: 0; }
+  .sx-form-group-offset { padding-left: @fhrLabelW; }
+}
+
+@media only screen and (max-width: @fhrMQW) {
+  .sx-form-horizontal .sx-form-group-offset { padding-left: 0; }
+}
+
+
+
+/*********************
+  label
+*********************/
+
+.sx-form-horizontal {
+  label { display: inline-block; width: @fhrLabelW; padding-right: @padding; }
+  .sx-form-label-top label { vertical-align: top; }
+  .sx-form-label-middle label { vertical-align: middle; }
+}
+ 
+
+@media only screen and (max-width: @fhrMQW) {
+  .sx-form-horizontal label { display: block; text-align: left; padding-right: 0; }
+}
+
+
+/*********************
+  inputs
+*********************/
+
+.sx-form {
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='password'],
+  textarea,
+  .sx-form-input {
+    border: @borderInputs; height: @inputHeight; padding: 0 10px; width: 100%; background-color: @bgWhite;
+    .border-radius(0);
+  }
+}
+.sx-form textarea { min-height: 120px; padding: 10px; }
+
+.sx-form .sx-form-input-square input[type="text"] { width: @inputHeight; padding: 0; text-align: center; }
+
+.sx-form-horizontal {
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='password'],
+  textarea,
+  .sx-form-file {
+    display: inline-block; max-width: @fhrInputW;
+  }
+}
+
+@media only screen and (max-width: @fhrMQW) {
+  .sx-form-horizontal {
+    input[type='text'],
+    input[type='email'],
+    input[type='tel'],
+    input[type='password'],
+    textarea,
+    .sx-form-file {
+      display: block; max-width: @sizeMobile;
+    }
+  }
+}
+
+
+/*********************
+  input placeholder
+*********************/
+@phdLC: @primary;
+
+.sx-form {
+  ::-webkit-input-placeholder { color: @phdLC; }
+  ::-moz-placeholder { color: @phdLC; }
+  :-ms-input-placeholder { color: @phdLC; }
+  :-moz-placeholder { color: @phdLC; }  
+}
+
+
+
+/*********************
+  required
+*********************/
+
+.sx-form-required label:after { content: " *"; color: @danger; } 
+
+
+/*********************
+  validation
+*********************/
+
+.sx-form-validation,
+.EditingFormErrorLabel,
+.ErrorLabel { display: block; color: @danger; line-height: 1.6em; font-style: italic; }
+
+.EditingFormErrorLabel,
+.ErrorLabel { display: block; }
+.InfoLabel { display: block; color: @success; line-height: 10px; padding: @padding 0 @padding*2 0; }
+
+.sx-form-horizontal {
+  .sx-form-validation  { padding-left: @fhrLabelW; }
+}
+
+@media only screen and (max-width: @fhrMQW) {
+  .sx-form-horizontal .sx-form-validation  { padding-left: 0; }
+}
+
+
+/*********************
+  disabled
+*********************/
+
+.sx-input-disabled,
+input:disabled,
+textarea:disabled {
+  opacity: .4;
+}
+
+
+/*********************
+  input-group
+*********************/
+
+.sx-input-group { position: relative; }
+  .sx-input-group a { position: absolute; right: 5px; top: 0; }
+  .sx-input-group input[type='text'] { padding-right: 50px; }
+
+@media only screen and (max-width: @fhrMQW) {
+  .sx-input-group a { right: 0; }
+}
+
+
+/*********************
+  input with icon
+*********************/
+
+.sx-form-input-icon i { position: absolute; top: 10px; right: 20px; font-size: 18px; }
+.sx-form-input-icon input[type='text'] { padding-right: 40px; }
+
+
+
+/*********************
+  checkbox
+*********************/
+
+.sx-form-checkbox { display: inline-block; line-height: 30px; }
+.sx-form-checkbox input[type="checkbox"] { display: none; }
+.sx-form-checkbox input[type="checkbox"] + label { 
+  display: inline-block; padding-left: 32px; left: 0; position: static;
+  background-image: url("@{imgPath}/checkbox0.png"); background-repeat: no-repeat;
+  background-position: center left; margin-right: 10px; .sx-noselect();
+}
+.sx-form-checkbox input[type="checkbox"]:checked + label { 
+  background-image: url("@{imgPath}/checkbox1.png");
+}
+.sx-form-checkbox-suffix { position: absolute; top: 0; right: 0; }
+
+.sx-form-checkbox-right input[type="checkbox"] + label {
+  background-position: center right; padding-left: 0; padding-right: 30px;
+}
+
+.sx-form-horizontal {
+  .sx-form-checkbox input[type="checkbox"] + label { width: auto; }
+}
+
+
+
+/*********************
+  radio
+*********************/
+
+.sx-form-radio { display: inline-block; line-height: 30px; }
+.sx-form-radio input[type="radio"] { display: none; }
+.sx-form-radio input[type="radio"] + label { 
+  display: inline-block; padding-left: 32px; left: 0; position: static;
+  background-image: url("@{imgPath}/radio0.png"); background-repeat: no-repeat;
+  background-position: center left; margin-right: 10px; .sx-noselect();
+}
+.sx-form-radio input[type="radio"]:checked + label { 
+  background-image: url("@{imgPath}/radio1.png");
+}
+.sx-form-radio-suffix { position: absolute; top: 0; right: 0; }
+
+.sx-form-horizontal {
+  .sx-form-radio input[type="radio"] + label { width: auto; }
+}
+
+
+/*********************
+  datepicker
+*********************/
+
+.sx-datepicker {}
+  .sx-datepicker input[type="text"] {  width: 212px; }
+
+.sx-form-horizontal {
+  .sx-datepicker { display: flex; }
+  .sx-datepicker label { padding-top: @inputHeight/4; }
+}
+
+
+.sx-datepicker-container { text-align: center }
+.sx-datepicker-container .datepicker-inline { margin: auto; width: 275px; }
+.sx-datepicker-container .datepicker-panel > ul[data-view='week'] > li,
+.sx-datepicker-container .datepicker-panel > ul[data-view='days'] li { width: 40px; height: 40px; line-height: 40px; }
+
+.sx-datepicker-container .datepicker-panel > ul > li[data-view='years current'], 
+.sx-datepicker-container .datepicker-panel > ul > li[data-view='year current'], 
+.sx-datepicker-container .datepicker-panel > ul > li[data-view='month current'] { width: 220px; }
+
+
+@media only screen and (max-width: @fhrMQW) {
+  .sx-form-horizontal .sx-datepicker { display: block; }
+}
+
+
+/*********************
+  selectric
+*********************/
+
+.sx-selectric .selectric { background-color: #fff; }
+.sx-selectric .label { height: @inputHeight; line-height: @inputHeight; font-size: 1em; padding: 0; }
+.sx-selectric .selectric-items { background-color: @bgWhite; border: 1px solid @inputBackgroundC; }
+.sx-selectric .selectric-open .selectric,
+.sx-selectric .selectric-hover .selectric,
+.sx-selectric .selectric-focus .selectric { border-color: @inputBackgroundC; }
+.sx-selectric .selectric-items ul, 
+.sx-selectric .selectric-items li { line-height: @inputHeight; min-height: @inputHeight; font-size: 1em; }
+.sx-selectric .selectric-items li { color: @text; padding: 0 @padding; }
+.sx-selectric .selectric-items li:hover { background-color: @inputHoverC; }
+.sx-selectric .selectric-items li.highlighted { background-color: @inputHighlightC; }
+
+.sx-selectric .selectric .button {
+  height: @inputHeight; line-height: @inputHeight; width: @inputHeight; background-color: transparent;
+  background-image: url("@{imgPath}/select.png"); background-repeat: no-repeat;
+  background-position: center right @margin; color: transparent;
+}
+
+.sx-selectric .selectric .button:after { display: none; }
+
+.sx-form-horizontal {
+  .sx-selectric label { display: inline-block; vertical-align: top; padding-top: @padding; }
+  .sx-selectric .selectric-wrapper { display: inline-block; width: 100%; max-width: @fhrInputW; margin-left: -4px; }
+}
+
+@media only screen and (max-width: @fhrMQW) {
+  .sx-form-horizontal .sx-selectric .selectric-wrapper { display: block; max-width: inherit; }
+}
+
+
+/*********************
+  select - jQuery UI
+*********************/
+/*
+@bgSelectActive: #eee;
+
+.sx-ui-select {}
+.sx-ui-select .ui-selectmenu-button { 
+  border: @borderInputs; height: @inputHeight; padding: 0 30px 0 10px; display: block;
+  background-image: url("@{imgPath}/select.png"); background-repeat: no-repeat;
+  background-position: center right @margin; background-color: @bgWhite; .border-radius(0);
+}
+.sx-ui-select .ui-selectmenu-button span.ui-selectmenu-text { padding: 0; line-height: @inputHeight; }
+
+.ui-selectmenu-menu .ui-menu { border: @borderInputs; background-color: #fff; }
+  .ui-menu .ui-state-focus, 
+  .ui-menu .ui-state-active { margin: 0; background-color: @bgSelectActive; }
+  .ui-menu .ui-menu-item { padding: @padding @padding*2; }
+
+.ui-front { z-index: 600; }
+
+.sx-form-horizontal {
+  .sx-ui-select { padding-left: @fhrLabelW; padding-right: 4px; }
+  .sx-ui-select label { margin-left: -@fhrLabelW; position: absolute; top: 5px; }
+}
+
+@media only screen and (max-width: @sizeMobile) {
+  .sx-form-horizontal .sx-ui-select { padding-left: 0; padding-right: 0; }
+}
+*/
+
+
+/*********************
+  file
+*********************/
+
+.sx-form-file { position: relative; display: inline-block; white-space: nowrap; }
+  .sx-form-file { display: inline-block; width: 100%; }
+  .sx-form-file a { position: absolute; top: 0; right: 0; z-index: 501; }
+  .sx-form-file input[type="file"] {
+    opacity: 0; overflow: hidden;  position: absolute;
+    top: 0; right: 0; height: @inputHeight; min-width: 100%;
+    z-index: 502; 
+  }
+.sx-form-file-label { vertical-align: top; padding-top: 6px; }
+
+.sx-form .sx-form-input { display: inline-block; padding-top: 6px; }
+
+.ui-selectmenu-open { z-index: 600; } /* aby byl select nad input type file */
+
+
+
+
+/*********************
+  updown
+*********************/
+
+.sx-updown { position: relative; }
+  .sx-updown input[type="text"] { padding-right: @inputHeight/2+10; padding-left: @inputHeight/2+5; font-size: 1.3em; font-weight: @fontBold; }
+  .sx-updown .sx-btn { min-height: 0; width: @inputHeight/2; height: @inputHeight/2; line-height: @inputHeight/3; }
+    .sx-updown .sx-btn i { font-size: 7px; }
+.sx-updown-up { position: absolute; top: 0; right: 0; }
+.sx-updown-down { position: absolute; bottom: 0; right: 0; }
+
+
+
+
+/*********************
+  Kentico - Bizform
+*********************/
+
+.EditingFormTable { width: 100%; }
+  .EditingFormTable td { padding: 5px 0; vertical-align: top; }
+  .EditingFormTable input[type="checkbox"], 
+  .EditingFormTable input[type="radio"] { margin-right: 5px; }
+
+.sx-form-horizontal {
+  .ErrorLabel,
+  .EditingFormErrorLabel,
+  .InfoLabel { padding-left: @fhrLabelW; }
+
+  .EditingFormLabel { display: inline-block; width: @fhrLabelW; padding-right: @padding; }
+}
+
+
+
+
+
+
+/*********************
+  BUTTONS
+*********************/
+@btnHeight: 38px;
+
+@btnPrimary: @primary;
+@btnPrimaryHover: lighten(@primary, 10%);
+@btnGrey: @greyDark;
+@btnGreyHover: lighten(@greyDark, 10%);
+@btnLight: @light;
+@btnLightHover: darken(@light, 10%);
+
+
+
+.sx-btn-group { display: inline-block; white-space: nowrap; position: relative; margin-left: 5px; }
+  .sx-btn-group .sx-btn { margin-left: -5px; }
+
+.sx-btn, .btn { 
+  white-space: nowrap; display: inline-block; border: 1px solid transparent;  
+  min-height: @btnHeight; max-height: @inputHeight; line-height: @btnHeight; padding: 0;
+  font-size: 1.1em; text-align: center; .border-radius(0); font-size: .9em;
+}
+.btn { padding: 0 25px; }
+.sx-btn .btn { border: 0; line-height: inherit; min-height: 0; } /* reset for biz forms submit */
+
+.sx-btn:hover { text-decoration: none; }
+
+.sx-btn-circle { .border-radius(60px); }
+.sx-btn-rounded { .border-radius(8px); }
+.sx-btn-padding { padding: 0 15px; }
+
+
+.sx-btn-icon i { position: relative; font-size: 1.4em; left: -3px; top: 2px; }
+
+.sx-btn-icon-33 { 
+  font-size: 1.1em; color: @text; padding: @padding/2 @padding; line-height: 24px;
+  max-height: inherit;
+}
+  .sx-btn-icon-33 span { position: relative; top: -3px; }
+  .sx-btn-icon-33 i { 
+    font-size: 26px; background-color: @bgWhite; .border-radius(100%); margin-left: @margin; 
+    position: relative; top: 2px; color: @primaryLight;
+  }
+
+.sx-btn-30 { width: 30px; position: relative; min-height: 30px; }
+  .sx-btn-30 i { font-size: 20px; position: absolute; left: -1px; top: -5px; }
+
+
+
+/* btn colors */
+.sx-btn-primary { color: @textInverse; background-color: @btnPrimary; border-color: @btnPrimary; }
+  .sx-btn-primary:hover { color: @textInverse; background-color: @btnPrimaryHover; border-color: @btnPrimaryHover; }
+  .sx-btn-primary.sx-btn-action { border-left: 1px solid @btnPrimaryHover; }
+
+.sx-btn-grey { color: @textInverse; background-color: @btnGrey; border-color: @btnGrey; }
+  .sx-btn-grey:hover { color: @textInverse; background-color: @btnGreyHover; border-color: @btnGreyHover; }
+  .sx-btn-grey.sx-btn-action { border-left: 1px solid @btnGreyHover; }
+
+.sx-btn-light { color: @primary; background-color: @btnLight; border-color: @btnLight; }
+  .sx-btn-light:hover { color: @primary; background-color: @btnLightHover; border-color: @btnLightHover; }
+  .sx-btn-light.sx-btn-action { border-left: 1px solid @btnLightHover; }
+
+
+

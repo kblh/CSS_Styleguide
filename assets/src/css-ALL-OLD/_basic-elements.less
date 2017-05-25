@@ -1,0 +1,29 @@
+/*******************************************
+  BASIC HTML ELEMENTS
+********************************************/
+
+body {
+  font: normal 400 1em @fontBasic;
+  color: @text;
+  background-color: @bgWhite;
+  line-height: 1.2em;
+  position: relative;
+  font-size: 1em;
+}
+
+a { color: @link; text-decoration: none; }
+
+p { margin: 0 0 @margin*2 0; line-height: 1.6em; }
+li { line-height: 1.6em; }
+
+h1, h2, h3, h4 { 
+  font-family: @fontTitle; line-height: 1.2em; padding: 0; margin: 0 0 @margin 0; font-weight: @fontLight;
+}
+h1, h2 { color: @primary; }
+h3, h4 { color: @text; }
+h1 { font-size: @h1sf; margin-bottom: @margin*2; }
+h2 { font-size: @h2sf; }
+h3 { font-size: @h3sf; }
+h4 { font-size: @h4sf; }
+
+hr { color: @line; background-color: @line; height: 1px;  border: 0px; }

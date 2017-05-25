@@ -1,0 +1,94 @@
+/*******************************************
+  SHAME :-(
+  keep this file empty
+********************************************/
+
+/* Style Guide classes */
+.sg-back-link { position: absolute; top: 5px; right: 10px; }
+
+.sg-color { display: inline-block; width: 130px; height: 130px; line-height: 130px; margin: 0 10px 10px 0; text-align: center; font-size: .8em; }
+
+.sg-circle-blue { width: 100px; height: 100px; background-color: @primary; .border-radius(50%); }
+
+
+
+.sx-animated-circle { .animation(sxkf-pulse 2s ease-in-out infinite); }
+
+@keyframes sxkf-pulse {
+  from {
+    .transform(translate3d(0px, 0px, 0px));
+  }
+
+  30% {
+    opacity: .3;
+  }
+
+  50% {
+    .transform(translate3d(400px, -20px, 0px) scale(1.5,1.5));
+    background-color: @danger;
+  }
+
+  70% {
+  }
+
+  to {
+    .transform(translate3d(0px, 0px, 0px));
+  }
+}
+
+
+.sx-animated-ball {
+	width: 50px;
+	height: 50px;
+	margin: 0 0 0 -25px;
+	background-color: #EC87C0;
+	border-radius: 100%;
+	position: absolute;
+	top: 10px; left: 60%;
+  .animation(sxkf-ball 1s infinite);
+}
+
+.sx-animated-ball2 {
+	width: 50px;
+	height: 50px;
+	margin: 0 0 0 -25px;
+	background-color: chocolate;
+	border-radius: 100%;
+	position: absolute;
+	top: 10px; left: 70%;
+  cursor: pointer;
+}
+  .sx-animated-ball2:hover { .animation(sxkf-ball 1s); }
+
+@keyframes sxkf-ball {
+  0%   { top: 6px; }
+  5%   { top: 8px; }
+	10%  { top: 12px; }
+	15%  { top: 20px; }
+	20%  { top: 38px; }
+	25%  { top: 72px; }
+	30%  { top: 100px; }
+	35%  { top: 152px; }
+	40%  { top: 154px; height: 46px; width: 54px; margin-left: -27px; }
+	45%  { top: 160px; height: 40px; width: 60px; margin-left: -30px; }
+	50%  { top: 176px; height: 24px; width: 72px; margin-left: -36px; }
+	55%  { top: 162px; height: 38px; width: 58px; margin-left: -29px; }
+	60%  { top: 138px; height: 48px; width: 52px; margin-left: -26px; }
+	65%  { top: 110px; height: 50px; width: 50px; }
+	70%  { top: 72px; }
+	75%  { top: 38px; }
+	80%  { top: 20px; }
+	85%  { top: 12px; }
+	90%  { top: 8px; }
+	95%  { top: 5px; }
+	100% { top: 5px; }
+}
+
+/* TODO: udělat něco důležitého */
+
+.bubak { width: 000px; }
+
+/* FIXME: asdasdasdas */
+
+
+

@@ -1,0 +1,19 @@
+/*******************************************
+  PRINT CSS
+********************************************/
+
+.sx-print-only { display: none; }
+
+@media print {
+
+.sx-print-only { display: block; }
+
+* { color: @text!important; }
+
+
+/* Custom clases reset */
+.sx-shadow { .drop-shadow(0, 0,0,0,0); }
+
+
+
+} /* PRINT CSS (end) */

@@ -1,0 +1,29 @@
+/*******************************************
+  IMPORTANT RULES
+********************************************/
+
+.sx-dni { display: none!important; }
+.sx-db { display: block; }
+.sx-dib { display: inline-block; }
+.sx-di { display: inline; }
+.sx-dn-desktop { display: none; }
+.sx-db-desktop { display: block; }
+
+
+@media only screen and (max-width: @sizeGridTablet) {
+  .sx-dn-tablet { display: none; }
+  .sx-dni-tablet { display: none!important; }
+  .sx-db-tablet { display: block; }
+  .sx-fn-tablet { float: none; }
+}
+
+@media only screen and (max-width: @sizeGridMobile) {
+  .sx-dn-mobile { display: none; }
+  .sx-dni-mobile { display: none!important; }
+  .sx-db-mobile { display: block; }
+  .sx-fn-mobile { float: none; }
+}
+
+/* display NONE */
+.sx-dn { display: none; }
+
