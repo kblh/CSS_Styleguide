@@ -1,6 +1,14 @@
 # Notes
 -------
 
+1. install git
+git clone https://github.com/kblh/LessStarter-2017-01.git
+
+2. install npm
+npm update
+
+-----
+
 npm install gulp-cli -g // globaly
 
 - create package.json
@@ -30,11 +38,4 @@ npm install --save-dev browser-sync gulp
 npm install --save-dev gulp-critical-css
 
 ----
-
-npm update
-
-
-----
-
-git clone https://github.com/kblh/LessStarter-2017-01.git
 
