@@ -2,11 +2,13 @@
 -------
 
 1. install git
+---
 git clone https://github.com/kblh/LessStarter-2017-01.git
 
 2. install npm
+---
 npm update
-
+(musi se pustit ve slozce, kde je i package.json)
 -----
 
 npm install gulp-cli -g // globaly
