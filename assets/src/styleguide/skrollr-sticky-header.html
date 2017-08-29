@@ -2,52 +2,19 @@
 
 <html>
 <head>
-	<title>skrollr2</title>
+	<title>skrollr-sticky-header</title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
 	<meta name="apple-mobile-web-app-capable" content="yes">
 	<link rel="stylesheet" href="../css/main.css?v=1.0">
 
 <style type="text/css">
-	body {
-		background-image: url("images/screeen-ruler.png"); background-repeat: no-repeat;
-	}
-
-	.boxik {
-		/*position: fixed;*/
-		width: 100px; height: 100px; line-height: 100px;
-		text-align: center; font-size: 2em;
-	}
-
-	.boxik-menu {
-		width: 300px; height: 100px; line-height: 100px;
-		text-align: center; font-size: 2em;
-	}
-
-	.boxik-offset { height: 0; }
-
-	.sx-menu-fixed { width: 100%; height: 100px; position: absolute; }
-
-/* 	data-100-top="opacity: 0.3; top: -50px;"  */
-
-/* data-[offset]-(viewport-anchor)-[element-anchor] */
-
-/*
-
-	data-anchor-target="#nav-target" 
-	data-0="opacity: 1; top: -100px;" 
-	data-0-top-top="opacity: 1; top: -50px;"
-	data-0-top-bottom="opacity: 1; top: 0px;"
-
-*/
-
+	.sx-menu-fixed { width: 100%; height: 100px; }
 </style>
 
 </head>
 
 <body class="_IE9">
-
-
 
 
 <!-- ####################################################################### -->
@@ -56,7 +23,7 @@
 <div class="row sxc-p30">
 
 	<div class="col-xs-12">
-		<h1>skrollr2</h1>
+		<h1>skrollr-sticky-header</h1>
 	</div>
 
 </div> <!-- row -->
@@ -72,22 +39,8 @@
 <div class="sxc-default container-fluid">
 <div class="row sxc-p30">
 
-
-	<div class="col-xs-2 sx-relative boxik-anchor sxc-light">
-		<div class="sxc-primary sxb-padding boxik" 
-		  data-anchor-target=".boxik-anchor"
-		  data-0="position: fixed; top: 100px; background-color: rgba(0, 100, 255, 0.9);"
-		  data-0-top-top="position: fixed; top: 0px;"
-		  data-1150="background-color: rgba(255, 0, 0, 0.6);"
-		  data-edge-strategy="set"
-			 >
-			box1
-		</div>
-	</div>
-
-
-	<div class="col-xs-10">
-		<h1 class="sx-effect" data-0="color: black;" data--150-top="color: red;">skrollr</h1>
+	<div class="col-xs-12">
+		<h1>skrollr</h1>
 		<hr>
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -104,26 +57,6 @@
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<div class="sx-relative boxik-anchor2 sx-dn">
-			<div class="sxc-primary sxb-padding boxik-menu" 
-				data-anchor-target=".boxik-anchor2"
-				data-0="position: static; top: 100px; background-color: rgba(0, 100, 255, 0.9);"
-				data-0-top-top="position: fixed; top: 0px;"
-				data-edge-strategy="set"
-				 >
-				box2
-			</div>
-		</div>
-
-		<div class="boxik-offset sx-dn" 
-			data-anchor-target=".boxik-anchor2"
-			data-0="height: 0;"
-			data-top="height: 0;"
-			data-0-top-top="height: 100px;"
-			data-edge-strategy="set"
-				>
-		</div>
-		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -131,22 +64,6 @@
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-
-		<p class=""><h3 class="sx-text-primary">anchor</h3></p>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -164,12 +81,11 @@
 
 
 
-
 <!-- ####################################################################### -->
 <div id="menu1" class="sxc-black-60p sx-menu-fixed"
 	data-anchor-target="#menu1"
-	data-0="position: static; top: 100px;"
-	data-0-top-top="position: fixed; top: 0px; z-index: 9;"
+  data-0="position: relative;"
+  data--100-top-top="position: fixed; top: 0px; z-index: 9;"
 	data-edge-strategy="set"
 >
 <div class="sxc-default container-fluid">
@@ -184,6 +100,13 @@
 </div> <!-- sxc-type container -->  
 </div> <!-- sxc-color -->  
 
+<div style="background: green;"
+  data-anchor-target="#menu1"
+  data-0="height: 0;"
+  data--100-top-top="height: 100px;"
+  data--99-top-top="height: 0"
+  data-edge-strategy="set"
+></div>
 
 
 
@@ -193,54 +116,52 @@
 <div class="sxc-default container-fluid">
 <div class="row sxc-p30">
 
-	<div class="col-xs-offset-2 col-xs-10">
-	  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</div>
+	<div class="col-xs-12">
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-	<div class="col-xs-offset-2 col-xs-10">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</div>
-		
-	<div class="col-xs-offset-2 col-xs-10">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</div>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-	<div class="col-xs-offset-2 col-xs-10">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-	</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
 		
 </div> <!-- row -->
 </div> <!-- sxc-type container -->  
 </div> <!-- sxc-color -->  
 				
+<!-- 
+	data-100-top-top="position: fixed; top: 100px; z-index: 10;"
 
+-->
 
 <!-- ####################################################################### -->
 <div id="menu2" class="sxc-primary sx-menu-fixed"
 	data-anchor-target="#menu2"
-	data-0="position: static; top: 100px;"
-	data-100-top-top="position: fixed; top: 100px; z-index: 10;"
-	data-0-top-top="top: 0;"
+  data-0="position: relative; top: 100px;"
+  data-0-top-top="z-index: 10; top: 0;"
+	data--100-top-top="position: fixed; top: 0;"
 	data-edge-strategy="set"
 >
 <div class="sxc-default container-fluid">
@@ -257,6 +178,14 @@
 </div> <!-- sxc-type container -->  
 </div> <!-- sxc-color -->  
 
+<div style="background: yellow;"
+  data-anchor-target="#menu1"
+  data-0="height: 0;"
+  data--100-top-top="height: 100px;"
+  data--99-top-top="height: 0"
+  data-edge-strategy="set"
+></div>
+
 
 
 
@@ -265,7 +194,7 @@
 <div class="sxc-default container-fluid">
 <div class="row sxc-p30">
 
-	<div class="col-xs-offset-2 col-xs-10">
+	<div class="col-xs-12">
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -273,35 +202,8 @@
 		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-		<div class="sx-relative boxik-anchor3 sx-dn">
-			<div class="sxc-primary sxb-padding boxik-menu" 
-				data-anchor-target=".boxik-anchor3"
-				data-0="position: static; top: 100px; background-color: rgba(255, 100, 0, 0.9);"
-				data-100-top-top="position: fixed; top: 0px;"
-				data-edge-strategy="set"
-				 >
-				box3
-			</div>
-		</div>
-
-		<div class="boxik-offset sx-dn" 
-			data-anchor-target=".boxik-anchor3"
-			data-0="height: 0;"
-			data-top="height: 0;"
-			data-0-top-top="height: 100px;"
-			data-edge-strategy="set"
-				>
-	  </div>
-			
+		
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-		<p data-0="font-size: 14px; color: #000;" data-350="font-size: 30px; color: #789;">
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
