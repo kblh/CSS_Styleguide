@@ -153,36 +153,40 @@
 				
 <!-- 
 	data-100-top-top="position: fixed; top: 100px; z-index: 10;"
+	data--100-top-top=" top: 0;"
 
 -->
 
 <!-- ####################################################################### -->
-<div id="menu2" class="sxc-primary sx-menu-fixed"
+<div id="menu2" class="sxc-primary sx-menu-fixed" style="opacity: .7;"
 	data-anchor-target="#menu2"
-  data-0="position: relative; top: 100px;"
-  data-0-top-top="z-index: 10; top: 0;"
-	data--100-top-top="position: fixed; top: 0;"
+  data-0="position: relative;"
+  data--200-top-top="position: fixed; z-index: 10; top: 0;"
 	data-edge-strategy="set"
 >
 <div class="sxc-default container-fluid">
 <div class="row sxc-p30">
 
 	<div class="col-xs-12">
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat.
+		Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 	</div>
 
 </div> <!-- row -->
 </div> <!-- sxc-type container -->  
 </div> <!-- sxc-color -->  
 
-<div style="background: yellow;"
-  data-anchor-target="#menu1"
-  data-0="height: 0;"
-  data--100-top-top="height: 100px;"
-  data--99-top-top="height: 0"
+<!-- 
+  data--200-top-top="height: 100px;"
+  data--199-top-top="height: 0"
+
+-->
+
+<div style="background: red;"
+  data-anchor-target="#menu2"
+	data-0="height: 0px;"
+  data--200-top-top="height: 100px;"
+  data--199-top-top="height: 0"
   data-edge-strategy="set"
 ></div>
 
