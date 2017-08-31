@@ -559,4 +559,25 @@ initCarousel(".j-owl2-5",{
 
 
 
+/*********************
+  ScrollMagic
+  http://scrollmagic.io/
+*********************/
+
+var controller = new ScrollMagic.Controller();
+
+var ourScene = new ScrollMagic.Scene({
+  triggerElement: '#section1'
+  // triggerHook: 1
+})
+.setClassToggle('#section1', 'fade-in')
+.addIndicators()
+.addTo(controller);
+
+
+
+
+// .setClassToogle('#section1', 'fade-in')
+// .setVelocity("#section1", {opacity: 0}, {duration: 400})
+
 });
