@@ -11,7 +11,7 @@
 .sg-circle-blue { width: 100px; height: 100px; background-color: @primary; .border-radius(50%); }
 
 
-
+/* CSS animation */
 .sx-animated-circle { .animation(sxkf-pulse 2s ease-in-out infinite); }
 
 @keyframes sxkf-pulse {
@@ -92,3 +92,41 @@
 
 
 
+/* Scrollmagic */
+
+.sx-section-fadein { 
+	opacity: 0; position: relative;
+	padding: 0 150px; text-align: center; 
+	.transition(all,0.5s,ease-in-out);
+}
+.sx-section-fadein.fade-in { opacity: 1; }
+
+
+/* Paralax */
+
+.sx-paralax {
+	padding: 150px 0;
+	background-color: #000;
+	color: #fff;
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+}
+
+.sx-paralax-image {
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: absolute;
+	width: 100%;
+	height: 150%;
+	top: 0;
+	z-index: 1;
+	opacity: 0.4;
+}
+.sx-paralax-content {
+	width: 90%;
+	margin: 0 auto;
+	max-width: @sizeTablet;
+	position: relative;
+	z-index: 2;
+}

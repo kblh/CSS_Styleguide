@@ -446,7 +446,7 @@ $('.j-progress').each(function(){
   Sticky header
   http://codepen.io/AdobeWordPress/pen/tigrx
 *********************/
-
+/*
 $(function(){ 
   var bar_level = $(document).scrollTop();
   var header_height = 90;
@@ -460,7 +460,7 @@ $(function(){
     }
    });
 });
-
+*/
 
 
 
@@ -566,15 +566,46 @@ initCarousel(".j-owl2-5",{
 
 var controller = new ScrollMagic.Controller();
 
-var ourScene = new ScrollMagic.Scene({
-  triggerElement: '#section1'
-  // triggerHook: 1
+var introScene = new ScrollMagic.Scene({
+  triggerHook: 0,
+  duration: 400,
+  triggerElement: '#intro'
 })
-.setClassToggle('#section1', 'fade-in')
-.addIndicators()
+// .setPin('#intro', {pushFollowers: false})
+.setPin('#intro')
+.addTo(controller);
+
+var introScene2 = new ScrollMagic.Scene({
+  triggerHook: 0.3,
+  triggerElement: '#sec01'
+})
+.setPin('#intro', {pushFollowers: false})
 .addTo(controller);
 
 
+$('.sx-paralax').each(function(){
+  var paralaxScene = new ScrollMagic.Scene({
+    triggerHook: 1,
+    duration: '150%',
+    triggerElement: this
+  })
+  .setTween(TweenMax.from('.sx-paralax-image', 1, {y: '-50%', ease:Power0.easeNone}))
+  .addTo(controller);
+ 
+});
+
+
+$('.sx-section-fadein').each(function(){
+  var sctionFadeInScene = new ScrollMagic.Scene({
+    // duration: 300,
+    // triggerHook: 1,
+    // offset: 100,
+    triggerElement: this
+  })
+  .setClassToggle(this, 'fade-in')
+  .addIndicators()
+  .addTo(controller);
+});
 
 
 // .setClassToogle('#section1', 'fade-in')

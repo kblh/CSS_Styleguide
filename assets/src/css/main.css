@@ -10110,6 +10110,9 @@ hr {
 .sx-text-default {
   color: #505050;
 }
+.sx-text-inverse {
+  color: #fff;
+}
 .sx-text-primary {
   color: #0172c2;
 }
@@ -12269,6 +12272,27 @@ textarea:disabled {
 .mt100 {
   margin-top: 100px;
 }
+.mt200 {
+  margin-top: 200px;
+}
+.mt300 {
+  margin-top: 300px;
+}
+.mt400 {
+  margin-top: 400px;
+}
+.mt450 {
+  margin-top: 450px;
+}
+.mt500 {
+  margin-top: 500px;
+}
+.mt600 {
+  margin-top: 600px;
+}
+.mt700 {
+  margin-top: 700px;
+}
 .mb0 {
   margin-bottom: 0;
 }
@@ -13481,6 +13505,7 @@ span[class^="gap"] {
   */
   background-clip: padding-box;
 }
+/* CSS animation */
 .sx-animated-circle {
   /*
   -webkit-animation: @string;
@@ -13638,6 +13663,48 @@ span[class^="gap"] {
   width: 0px;
 }
 /* FIXME: test1 */
+/* Scrollmagic */
+.sx-section-fadein {
+  opacity: 0;
+  position: relative;
+  padding: 0 150px;
+  text-align: center;
+  /*
+  -webkit-transition: @property @time @timing;
+  -moz-transition: @property @time @timing;
+  -o-transition: @property @time @timing;
+  */
+  transition: all 0.5s ease-in-out;
+}
+.sx-section-fadein.fade-in {
+  opacity: 1;
+}
+/* Paralax */
+.sx-paralax {
+  padding: 150px 0;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.sx-paralax-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 150%;
+  top: 0;
+  z-index: 1;
+  opacity: 0.4;
+}
+.sx-paralax-content {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1112px;
+  position: relative;
+  z-index: 2;
+}
 /*******************************************
   TEST ------ MODULES
 ********************************************/
