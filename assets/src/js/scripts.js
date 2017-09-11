@@ -583,6 +583,23 @@ var introScene2 = new ScrollMagic.Scene({
 .addTo(controller);
 
 
+var paralaxTl = new TimelineMax();
+paralaxTl
+  .from('.sx-paralax-content', 0.4, {autoAlpha: 0, ease:Power0.easeNone}, 0.4)
+  .from('.sx-paralax-image', 1, {y: '-50%', ease:Power0.easeNone}, 0)
+  ;
+
+var paralaxScene = new ScrollMagic.Scene({
+  triggerHook: 1,
+  duration: '150%',
+  triggerElement: '.sx-paralax'
+})
+.setTween(paralaxTl)
+.addTo(controller);
+
+
+/* Paralax for each */
+/*
 $('.sx-paralax').each(function(){
   var paralaxScene = new ScrollMagic.Scene({
     triggerHook: 1,
@@ -593,6 +610,8 @@ $('.sx-paralax').each(function(){
   .addTo(controller);
  
 });
+*/
+
 
 
 $('.sx-section-fadein').each(function(){
