@@ -10893,6 +10893,10 @@ textarea:disabled {
 .sx-btn-padding {
   padding: 0 15px;
 }
+.sx-btn-active {
+  font-weight: bold;
+  text-decoration: underline;
+}
 .sx-btn-icon i {
   position: relative;
   font-size: 1.4em;
@@ -13489,6 +13493,27 @@ span[class^="gap"] {
   margin: 0 10px 10px 0;
   text-align: center;
   font-size: .8em;
+}
+.sg-color-red {
+  background-color: red;
+}
+.sg-color-blue {
+  background-color: blue;
+}
+.sg-color-yellow {
+  background-color: yellow;
+}
+.sg-circle {
+  /*
+  -webkit-border-radius: @radius;
+  -moz-border-radius:    @radius;
+  */
+  border-radius: 50%;
+  /*
+  -moz-background-clip:    padding;
+  -webkit-background-clip: padding-box;
+  */
+  background-clip: padding-box;
 }
 .sg-circle-blue {
   width: 100px;

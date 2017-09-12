@@ -164,6 +164,79 @@
 
 <script src="../js/scripts.js"></script>
 
+<script>
+/*********************
+  ScrollMagic
+  http://scrollmagic.io/
+*********************/
+
+var controller = new ScrollMagic.Controller();
+
+var introScene = new ScrollMagic.Scene({
+  triggerHook: 0,
+  duration: 400,
+  triggerElement: '#intro'
+})
+// .setPin('#intro', {pushFollowers: false})
+.setPin('#intro')
+.addTo(controller);
+
+var introScene2 = new ScrollMagic.Scene({
+  triggerHook: 0.3,
+  triggerElement: '#sec01'
+})
+.setPin('#intro', {pushFollowers: false})
+.addTo(controller);
+
+
+var paralaxTl = new TimelineMax();
+paralaxTl
+  .from('.sx-paralax-content', 0.4, {autoAlpha: 0, ease:Power0.easeNone}, 0.4)
+  .from('.sx-paralax-image', 1, {y: '-50%', ease:Power0.easeNone}, 0)
+  ;
+
+var paralaxScene = new ScrollMagic.Scene({
+  triggerHook: 1,
+  duration: '150%',
+  triggerElement: '.sx-paralax'
+})
+.setTween(paralaxTl)
+.addTo(controller);
+
+
+/* Paralax for each */
+/*
+$('.sx-paralax').each(function(){
+  var paralaxScene = new ScrollMagic.Scene({
+    triggerHook: 1,
+    duration: '150%',
+    triggerElement: this
+  })
+  .setTween(TweenMax.from('.sx-paralax-image', 1, {y: '-50%', ease:Power0.easeNone}))
+  .addTo(controller);
+ 
+});
+*/
+
+
+
+$('.sx-section-fadein').each(function(){
+  var sctionFadeInScene = new ScrollMagic.Scene({
+    // duration: 300,
+    // triggerHook: 1,
+    // offset: 100,
+    triggerElement: this
+  })
+  .setClassToggle(this, 'fade-in')
+  .addIndicators()
+  .addTo(controller);
+});
+
+// .setClassToogle('#section1', 'fade-in')
+// .setVelocity("#section1", {opacity: 0}, {duration: 400})
+	
+</script>
+
 
 <a class="sg-back-link" href="00-index.html"><i class="fa fa-home"></i></a>
 
