@@ -39,7 +39,7 @@ gulp.task('compile-less', function() {
 
 
 /* watch less changes (SRC) */
-gulp.task('css.watch', function() {  
+gulp.task('css.watch', ['compile-less'], function() {
   browserSync.init({
     server: {
       baseDir: dir.appSrc
