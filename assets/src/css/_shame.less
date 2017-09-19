@@ -106,7 +106,14 @@
 .sx-section-fadein.fade-in { opacity: 1; }
 
 
-.sx-nav-fixed { position: fixed; width: 100%; }
+.sx-nav { position: fixed; width: 100%; top: 0; left: 0; z-index: 9; opacity: 1; height: 100px; padding: 25px 0; }
+.sx-nav-fixed { opacity: .7; height: 60px; padding: 15px 0; }
+
+.sx-boxik { 
+	width: 150px; height: 150px; background-color: red; z-index: 4;
+	position: absolute; left: calc(~'50% - 500px'); top: 150px;
+}
+.sx-boxik-fixed { position: fixed; }
 
 /* Paralax */
 
