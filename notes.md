@@ -3,7 +3,7 @@
 
 1. install git
 ---
-git clone https://github.com/kblh/LessStarter-2017-01.git
+git clone https://github.com/kblh/CSS_Styleguide
 
 2. install npm
 ---
@@ -27,7 +27,6 @@ npm install gulp --save
 
 npm install --save-dev gulp-sequence
 npm install --save-dev gulp-watch
-// npm install --save-dev gulp-minify-css - DEPR
 npm install --save-dev gulp-rename gulp-header
 npm install --save-dev gulp-clean-css
 npm install --save-dev gulp-concat
@@ -36,6 +35,8 @@ npm install --save-dev gulp-size
 npm install --save-dev gulp-base64
 npm install --save-dev gulp-autoprefixer
 npm install --save-dev browser-sync gulp
+
+npm install --save-dev gulp-file-include
 
 npm install --save-dev gulp-critical-css
 
