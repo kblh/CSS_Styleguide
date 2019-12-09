@@ -1,3 +1,4 @@
 node_modules/
 assets/dist/
 assets/src/css/main.css
+package-lock.json
