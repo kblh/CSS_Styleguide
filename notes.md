@@ -25,12 +25,15 @@ npm install gulp --save
 
 - The --save and --save-dev install flags
 
+npm install --save-dev gulp-less
+npm install --save-dev gulp-minify-css
+npm install --save-dev gulp-eslint
 npm install --save-dev gulp-sequence
 npm install --save-dev gulp-watch
 npm install --save-dev gulp-rename gulp-header
 npm install --save-dev gulp-clean-css
 npm install --save-dev gulp-concat
-npm install --save-dev gulp-uglyfly gulp-eslint
+npm install --save-dev gulp-uglyfly
 npm install --save-dev gulp-size
 npm install --save-dev gulp-base64
 npm install --save-dev gulp-autoprefixer
