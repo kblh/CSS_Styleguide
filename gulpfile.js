@@ -158,7 +158,7 @@ gulp.task('fonts.dist', function() {
 *********************/
 
 gulp.task('fileinclude', function() {
-  gulp.src([dir.appSrc + 'styleguide/_*.html'])
+  gulp.src([dir.appSrc + 'templates/*.html'])
     .pipe(fileinclude({
       prefix: '@@',
       basepath: '@file'
