@@ -13,6 +13,7 @@ var concat       = require('gulp-concat');
 var uglyfly      = require('gulp-uglyfly');
 var base64       = require('gulp-base64');
 var criticalCss  = require('gulp-critical-css');
+var fileinclude  = require('gulp-file-include');
 var browserSync  = require('browser-sync').create();
 var pkg          = require('./package.json');
 
@@ -39,13 +40,14 @@ gulp.task('compile-less', function() {
 
 
 /* watch less changes (SRC) */
-gulp.task('css.watch', ['compile-less'], function() {
+gulp.task('css.watch', ['fileinclude','compile-less'], function() {
   browserSync.init({
     server: {
       baseDir: dir.appSrc
     }
   });
   gulp.watch(dir.appSrc + 'css/**/*.less' , ['compile-less']);
+  gulp.watch(dir.appSrc + 'styleguide/*.html' , ['fileinclude']);
   gulp.watch(dir.appSrc + 'styleguide/*.html').on('change', browserSync.reload);
   gulp.watch(dir.appSrc + 'css/*.css').on('change', browserSync.reload);
 });
@@ -151,6 +153,19 @@ gulp.task('fonts.dist', function() {
 });
 
 
+/*********************
+  Fileinclude
+*********************/
+
+gulp.task('fileinclude', function() {
+  gulp.src([dir.appSrc + 'styleguide/_*.html'])
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
+    .pipe(gulp.dest(dir.appSrc + 'result'));
+});
+
 
 /*********************
   Webserver
@@ -189,5 +204,6 @@ gulp.task('browser-sync', () => {
 
 /* Task when running `gulp` from terminal */
 gulp.task('default', ['css.watch']);
+gulp.task('include', ['fileinclude']);
 gulp.task('dist', ['images.dist','fonts.dist','html.dist','css.dist','js-lib.dist','js-lib.dist','js.dist']);
 

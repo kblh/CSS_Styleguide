@@ -1,4 +1,5 @@
 node_modules/
 assets/dist/
+assets/src/result
 assets/src/css/main.css
 package-lock.json
