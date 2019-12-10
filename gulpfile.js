@@ -47,8 +47,10 @@ gulp.task('css.watch', ['fileinclude','compile-less'], function() {
     }
   });
   gulp.watch(dir.appSrc + 'css/**/*.less' , ['compile-less']);
-  gulp.watch(dir.appSrc + 'styleguide/*.html' , ['fileinclude']);
-  gulp.watch(dir.appSrc + 'styleguide/*.html').on('change', browserSync.reload);
+  gulp.watch(dir.appSrc + 'templates/*.html' , ['fileinclude']);
+  gulp.watch(dir.appSrc + 'templates/**/*.html' , ['fileinclude']);
+  gulp.watch(dir.appSrc + 'templates/*.html').on('change', browserSync.reload);
+  gulp.watch(dir.appSrc + 'templates/**/*.html').on('change', browserSync.reload);
   gulp.watch(dir.appSrc + 'css/*.css').on('change', browserSync.reload);
 });
 
@@ -120,10 +122,10 @@ gulp.task('js.dist', function() {
 /* copy HTML (SRC -> DIST) */
 gulp.task('html.dist', function() {
   gulp.src([
-    dir.appSrc + 'styleguide/*',
-    dir.appSrc + 'styleguide/*/*'
+    dir.appSrc + 'templates/*',
+    dir.appSrc + 'templates/*/*'
   ])
-    .pipe(gulp.dest(dir.appDst + 'styleguide/'))
+    .pipe(gulp.dest(dir.appDst + 'templates/'))
     .pipe(size({
       title: 'Size of HTML'
     }));
@@ -174,7 +176,7 @@ gulp.task('fileinclude', function() {
 gulp.task('browser-sync', () => {
   browserSync({
     server: {
-      baseDir: dir.appSrc+"/styleguide/00-index.html"
+      baseDir: dir.appSrc+"/templates/__index__.html"
     }
   });
 });
