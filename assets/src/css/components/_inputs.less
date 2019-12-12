@@ -3,6 +3,7 @@
 ********************************************/
 
 @input-height: 48px;
+@input-tiny-height: 33px;
 
 
 /*********************
@@ -36,7 +37,7 @@
 
 .c-input--textarea {
   padding: @global-spacing-unit;
-  min-height: 300px;
+  min-height: 200px;
 }
 
 .c-input:focus {
@@ -170,3 +171,47 @@
   border-color: @color-error;
 }
 
+
+/*********************
+  radio-button
+  checkbox-button
+*********************/
+
+.radio-button,
+.checkbox-button {
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+}
+
+.radio-button input,
+.checkbox-button input { display: none; }
+
+.radio-button input + label,
+.checkbox-button input + label { 
+  display: inline-block;
+  min-height: @input-height;
+  line-height: @input-height;
+  padding: 0 @global-spacing-unit*2;
+  border: 1px solid @color-border;
+  color: @color-link;
+  background-color: @color-background;
+  border-radius: @input-height;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+
+}
+
+.radio-button input:checked + label,
+.checkbox-button input:checked + label { 
+  background-color: @color-primary;
+  border-color: @color-primary;
+  color: @color-text-inverse;
+}
+
+.radio-button--tiny input + label,
+.checkbox-button--tiny input + label {
+  min-height: @input-tiny-height;
+  line-height: @input-tiny-height;
+}
