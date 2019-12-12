@@ -3488,56 +3488,78 @@ fieldset {
 /*******************************************
   COLORS
 ********************************************/
+/* based on material.io */
 :root {
-  --color-primary: #0172c2;
-  --color-text-muted: #f2f2f2;
+  --color-primary: #0277bd;
+  --color-text-muted: #bdbdbd;
   --color-text-inverse: #fff;
   --color-muted: #eee;
   --color-background: #fff;
-  --color-link: #0172c2;
-  --color-alert: darkred;
-  --color-warning: orange;
-  --color-success: darkgreen;
-  --color-info: yellow;
+  --color-link: #0277bd;
+  --color-error: #b71c1c;
+  --color-warning: #fb8c00;
+  --color-success: #7cb342;
+  --color-info: #fdd835;
 }
 .c--link {
-  color: #0172c2;
+  color: #0277bd;
 }
 .c--text-muted {
-  color: #f2f2f2;
+  color: #bdbdbd;
 }
 .c--text-inverse {
   color: #fff;
 }
-.c--alert {
-  color: darkred;
+.c--error {
+  color: #b71c1c;
 }
 .c--warning {
-  color: orange;
+  color: #fb8c00;
 }
 .c--success {
-  color: darkgreen;
+  color: #7cb342;
 }
 .c--info {
-  color: yellow;
+  color: #fdd835;
 }
 .bgc--primary {
-  background-color: #0172c2;
+  background-color: #0277bd;
 }
 .bgc--muted {
   background-color: #eee;
 }
-.bgc--alert {
-  background-color: darkred;
+.bgc--error {
+  background-color: #b71c1c;
 }
 .bgc--warning {
-  background-color: orange;
+  background-color: #fb8c00;
 }
 .bgc--success {
-  background-color: darkgreen;
+  background-color: #7cb342;
 }
 .bgc--info {
-  background-color: yellow;
+  background-color: #fdd835;
+}
+.bgc--grey-100 {
+  background-color: #f5f5f5;
+}
+.bgc--grey-200 {
+  background-color: #eee;
+}
+.bgc--grey-300 {
+  background-color: #e0e0e0;
+}
+.bgc--grey-400 {
+  background-color: #bdbdbd;
+}
+/*******************************************
+  ANIMATION
+********************************************/
+.c-transition {
+  transition: all 250ms ease;
+}
+.c-transition--slow {
+  transition: all 1000ms ease;
 }
 /*******************************************
   FONTS
@@ -3633,6 +3655,26 @@ fieldset {
   padding-top: 20px;
   padding-bottom: 20px;
 }
+.l-container-full {
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+}
+.l-container-image {
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  min-height: 450px;
+}
+/*********************
+  Form group
+*********************/
+.l-form-group {
+  margin-bottom: 20px;
+}
+.l-form-group__validation {
+  font-size: 85%;
+}
 /*********************
   Columns
 *********************/
@@ -3682,19 +3724,50 @@ fieldset {
     column-count: 6;
   }
 }
+/*********************
+  menu
+*********************/
+.l-menu-horizontal {
+  padding: 0;
+  margin: 0;
+}
+.l-menu-horizontal ul {
+  padding: 0;
+  margin: 0;
+}
+.l-menu-horizontal li {
+  display: inline-block;
+  list-style-type: none;
+}
+.l-menu-horizontal a {
+  display: inline-block;
+  text-align: center;
+  padding: 0 10px;
+}
+.l-menu-vertical {
+  padding: 0;
+  margin: 0;
+}
+.l-menu-vertical ul {
+  padding: 0;
+  margin: 0;
+}
+.l-menu-vertical li {
+  list-style-type: none;
+}
 /*******************************************
   BASIC HTML ELEMENTS
 ********************************************/
 body {
   font: normal 400 1em 'OpenSans', sans-serif;
-  color: #333;
+  color: #212121;
   background-color: #fff;
   line-height: 1.2em;
   position: relative;
   font-size: 1em;
 }
 a {
-  color: #0172c2;
+  color: #0277bd;
 }
 p {
   margin: 0 0 20px 0;
@@ -3721,6 +3794,166 @@ hr {
   background-color: #eee;
   height: 1px;
   border: 0px;
+}
+/*******************************************
+  INPUTS
+********************************************/
+/*********************
+  placeholder
+*********************/
+::placeholder {
+  font-weight: 300;
+  color: #bdbdbd;
+}
+/*********************
+  Input
+*********************/
+.c-input {
+  border: 1px solid #e0e0e0;
+  height: 48px;
+  width: 100%;
+  padding: 0 10px;
+  background-color: #fff;
+}
+.c-input.is-error {
+  border-color: #b71c1c;
+}
+.c-input--textarea {
+  padding: 10px;
+  min-height: 300px;
+}
+/*********************
+  checkbox
+  radio
+*********************/
+.c-checkbox,
+.c-radio {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  display: inline-block;
+  margin-top: 10px;
+}
+.c-checkbox__input,
+.c-radio__input {
+  left: -9999px;
+  position: absolute;
+}
+.c-checkbox__label,
+.c-radio__label {
+  display: block;
+  font-size: 1rem;
+  line-height: 20px;
+  min-height: 20px;
+  padding-top: 0px;
+  padding-left: 48px;
+  position: relative;
+  color: #212121;
+  cursor: pointer;
+}
+.c-checkbox__label::before,
+.c-radio__label::before {
+  speak: none;
+  display: inline-block;
+  content: "";
+  transition: all 250ms ease;
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 0;
+  background-color: #fff;
+}
+.c-checkbox__input:checked + .c-checkbox__label::before,
+.c-radio__input:checked + .c-radio__label::before {
+  background-color: #fff;
+}
+.c-checkbox__label::after,
+.c-radio__label::after {
+  transition: all 250ms ease;
+  display: block;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  top: 6px;
+  left: 6px;
+  border-radius: 0;
+  background-color: #212121;
+  content: "";
+  transform: scale(0);
+}
+.c-checkbox__input:checked + .c-checkbox__label::after,
+.c-radio__input:checked + .c-radio__label::after {
+  transform: scale(1);
+}
+.c-radio__label::before,
+.c-radio__label::after {
+  border-radius: 50%;
+}
+.c-checkbox__input[disabled] + .c-checkbox__label,
+.c-checkbox__input[readonly] + .c-checkbox__label,
+.c-radio__input[disabled] + .c-radio__label,
+.c-radio__input[readonly] + .c-radio__label {
+  color: #bdbdbd;
+  cursor: default;
+}
+.c-checkbox__input[disabled] + .c-checkbox__label::after,
+.c-checkbox__input[readonly] + .c-checkbox__label::after,
+.c-checkbox__input[disabled] + .c-radio__label::after,
+.c-checkbox__input[readonly] + .c-radio__label::after {
+  background-color: #eee;
+}
+.c-checkbox__input.is-error + .c-checkbox__label::before,
+.c-radio__input.is-error + .c-radio__label::before {
+  border-width: 1px;
+  border-color: #b71c1c;
+}
+/*******************************************
+  CONTROLS
+********************************************/
+/*********************
+  Buttons
+*********************/
+.c-btn {
+  white-space: nowrap;
+  display: inline-block;
+  border: 1px solid transparent;
+  min-height: 48px;
+  height: 48px;
+  line-height: 48px;
+  padding: 0 20px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: top;
+}
+.c-btn--primary {
+  background-color: #0277bd;
+  color: #fff;
+  border-color: #0277bd;
+}
+.c-btn--primary:hover {
+  background-color: #0287d6;
+  border-color: #0287d6;
+}
+.c-btn--primary-outline {
+  background: transparent;
+  color: #0277bd;
+  border-color: #0277bd;
+}
+.c-btn--primary-outline:hover {
+  color: #01578b;
+  border-color: #01578b;
+}
+.c-btn--muted {
+  background-color: #eee;
+  color: #212121;
+  border-color: #eee;
+}
+.c-btn--muted:hover {
+  background-color: #e1e1e1;
+  border-color: #e1e1e1;
 }
 /*******************************************
   MICRO TACHYONS
@@ -4278,7 +4511,7 @@ hr {
   border: 1px solid #ccc;
 }
 .sg-box {
-  background-color: #0172c2;
+  background-color: #0277bd;
   text-align: center;
   color: #fff;
   margin-bottom: 10px;
