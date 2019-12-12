@@ -4046,6 +4046,40 @@ hr {
   border-color: #e1e1e1;
 }
 /*******************************************
+  INPUTS
+********************************************/
+.c-table {
+  border-collapse: collapse;
+}
+.c-table th {
+  text-align: left;
+  font-weight: 700;
+}
+.c-table th,
+.c-table td {
+  padding: 10px;
+  border-bottom: 1px solid #e0e0e0;
+}
+.c-table th:first-child,
+.c-table td:first-child {
+  padding-left: 0;
+}
+.c-table th:last-child,
+.c-table td:last-child {
+  padding-right: 0;
+}
+/* stripped */
+.c-table--striped th,
+.c-table--striped td {
+  border: 0;
+}
+.c-table--striped tr:nth-child(odd) {
+  background-color: #fff;
+}
+.c-table--striped tr:nth-child(even) {
+  background-color: #eee;
+}
+/*******************************************
   MICRO TACHYONS
 
   based on Emmet notation
