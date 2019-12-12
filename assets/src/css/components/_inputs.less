@@ -21,10 +21,15 @@
 
 .c-input {
   border: 1px solid @color-border;
+  border-radius: 0;
   height: @input-height;
   width: 100%;
   padding: 0 @global-spacing-unit;
   background-color: @color-white;
+  transition: @transition-default;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
   .c-input.is-error { border-color: @color-error; }
@@ -33,6 +38,40 @@
   padding: @global-spacing-unit;
   min-height: 300px;
 }
+
+.c-input:focus {
+  border-color: @color-text;
+  outline: none;
+}
+
+.c-input[disabled],
+.c-input[readonly] {
+  border-color: @color-text-muted;
+  background-color: @color-muted;
+  color: @color-text-muted;
+  cursor: default;
+  pointer-events: none;
+}
+
+/*********************
+  Select
+*********************/
+
+.c-select { position: relative; }
+
+  .c-select::after {
+    speak: none;
+    content: " ";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: calc(50% - 4px);
+    right: 15px;
+    transform: translateY(-50%) rotate(45deg);
+    border: 1px solid @color-text;
+    border-width: 0 1px 1px 0;
+    pointer-events: none;
+  }
 
 /*********************
   checkbox
@@ -70,7 +109,7 @@
   speak: none;
   display: inline-block;
   content: "";
-  transition: @transition-basic;
+  transition: @transition-default;
   display: block;
   width: @global-spacing-unit * 2;
   height: @global-spacing-unit * 2;
@@ -89,7 +128,7 @@
 
 .c-checkbox__label::after,
 .c-radio__label::after {
-  transition: @transition-basic;
+  transition: @transition-default;
   display: block;
   position: absolute;
   width: 8px;

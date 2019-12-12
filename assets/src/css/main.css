@@ -3635,6 +3635,8 @@ fieldset {
 }
 /*******************************************
   LAYOUT
+  prefix: .l-
+  for containers and other elements without graphical representation
 ********************************************/
 /* 
   breakpoints
@@ -3671,6 +3673,9 @@ fieldset {
 *********************/
 .l-form-group {
   margin-bottom: 20px;
+}
+.l-form-group__input {
+  margin: 3px 0;
 }
 .l-form-group__validation {
   font-size: 85%;
@@ -3810,10 +3815,15 @@ hr {
 *********************/
 .c-input {
   border: 1px solid #e0e0e0;
+  border-radius: 0;
   height: 48px;
   width: 100%;
   padding: 0 10px;
   background-color: #fff;
+  transition: all 250ms ease;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 .c-input.is-error {
   border-color: #b71c1c;
@@ -3821,6 +3831,37 @@ hr {
 .c-input--textarea {
   padding: 10px;
   min-height: 300px;
+}
+.c-input:focus {
+  border-color: #212121;
+  outline: none;
+}
+.c-input[disabled],
+.c-input[readonly] {
+  border-color: #bdbdbd;
+  background-color: #eee;
+  color: #bdbdbd;
+  cursor: default;
+  pointer-events: none;
+}
+/*********************
+  Select
+*********************/
+.c-select {
+  position: relative;
+}
+.c-select::after {
+  speak: none;
+  content: " ";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: calc(46%);
+  right: 15px;
+  transform: translateY(-50%) rotate(45deg);
+  border: 1px solid #212121;
+  border-width: 0 1px 1px 0;
+  pointer-events: none;
 }
 /*********************
   checkbox
