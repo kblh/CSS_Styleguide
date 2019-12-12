@@ -176,7 +176,7 @@ gulp.task('fileinclude', function() {
 gulp.task('browser-sync', () => {
   browserSync({
     server: {
-      baseDir: dir.appSrc+"/templates/__index__.html"
+      baseDir: dir.appSrc+"/templates/typography.html"
     }
   });
 });

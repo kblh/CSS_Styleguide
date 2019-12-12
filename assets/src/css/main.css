@@ -3851,7 +3851,6 @@ hr {
   position: relative;
 }
 .c-select::after {
-  speak: none;
   content: " ";
   position: absolute;
   width: 10px;
@@ -3892,7 +3891,6 @@ hr {
 }
 .c-checkbox__label::before,
 .c-radio__label::before {
-  speak: none;
   display: inline-block;
   content: "";
   transition: all 250ms ease;
