@@ -3,6 +3,7 @@
 ********************************************/
 
 @button-height: 48px;
+@button-tiny-height: 33px;
 
 /*********************
   Buttons
@@ -20,6 +21,16 @@
   text-decoration: none;
   cursor: pointer;
   vertical-align: top;
+}
+
+.c-btn--tiny {
+  min-height: @button-tiny-height;
+  height: @button-tiny-height;
+  line-height: @button-tiny-height;
+}
+
+.c-btn--rounded {
+  border-radius: @button-height;
 }
 
 .c-btn--primary {

@@ -11,6 +11,8 @@ body {
   font-size: 1em;
 }
 
+::selection { background-color: @color-text-select; }
+
 a { color: @color-link; }
 
 p { margin: 0 0 @global-spacing-unit*2 0; line-height: 1.6em; }
@@ -23,3 +25,4 @@ h1, h2, h3, h4 {
 }
 
 hr { color: @color-muted; background-color: @color-muted; height: 1px;  border: 0px; }
+
