@@ -3555,6 +3555,7 @@ fieldset {
 }
 /*******************************************
   ANIMATION
+  e.g. transition, keyframes
 ********************************************/
 .c-transition {
   transition: all 250ms ease;
@@ -3637,7 +3638,8 @@ fieldset {
 /*******************************************
   LAYOUT
   prefix: .l-
-  for containers and other elements without graphical representation
+  elements without graphical representation
+  e.g. containers, form-group, columns
 ********************************************/
 /* 
   breakpoints
@@ -3649,7 +3651,7 @@ fieldset {
 /* spacing */
 /* grid */
 /*********************
-  Containers
+  containers
 *********************/
 .l-container-default {
   width: 1280px;
@@ -3670,7 +3672,7 @@ fieldset {
   min-height: 450px;
 }
 /*********************
-  Form group
+  form group
 *********************/
 .l-form-group {
   margin-bottom: 20px;
@@ -3682,7 +3684,7 @@ fieldset {
   font-size: 85%;
 }
 /*********************
-  Columns
+  columns
 *********************/
 .l-columns-2 {
   column-count: 1;
@@ -3782,6 +3784,9 @@ p {
   margin: 0 0 20px 0;
   line-height: 1.6em;
 }
+img {
+  max-width: 100%;
+}
 ul {
   padding-left: 2rem;
 }
@@ -3806,6 +3811,7 @@ hr {
 }
 /*******************************************
   INPUTS
+  e.g. input, select, checkbox, radio, date, time, password
 ********************************************/
 /*********************
   placeholder
@@ -3815,7 +3821,7 @@ hr {
   color: #bdbdbd;
 }
 /*********************
-  Input
+  input
 *********************/
 .c-input {
   border: 1px solid #e0e0e0;
@@ -3849,7 +3855,7 @@ hr {
   pointer-events: none;
 }
 /*********************
-  Select
+  select
 *********************/
 .c-select {
   position: relative;
@@ -3993,9 +3999,10 @@ hr {
 }
 /*******************************************
   CONTROLS
+  e.g. button, link
 ********************************************/
 /*********************
-  Buttons
+  button
 *********************/
 .c-btn {
   white-space: nowrap;
@@ -4045,6 +4052,80 @@ hr {
   background-color: #e1e1e1;
   border-color: #e1e1e1;
 }
+/*******************************************
+  INFO
+  e.g. alert, badge, tooltip, label, tag, modal
+********************************************/
+/*********************
+  modal
+*********************/
+.c-modal__cover {
+  visibility: visible;
+  position: fixed;
+  /* 
+  -- use flex OR left: 50%; transform: translateX(-50%);
+  display: flex;
+  justify-content: center; 
+  */
+  padding-top: 60px;
+  content: "";
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.c-modal--is-hidden {
+  visibility: hidden;
+}
+.c-modal--is-hidden .c-modal {
+  opacity: 0;
+}
+.c-modal {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  min-width: 400px;
+  max-width: 825px;
+  background-color: #fff;
+  opacity: 1;
+  transition: all 250ms ease;
+}
+.c-modal:after {
+  content: " . ";
+  /* fix for FF */
+  color: transparent;
+  position: absolute;
+  height: 120px;
+}
+.c-modal__header {
+  position: relative;
+  background-color: #0277bd;
+  padding: 10px 20px;
+  color: #fff;
+}
+.c-modal__header h3 {
+  margin: 0;
+}
+.c-modal__header svg {
+  fill: #fff;
+}
+.c-modal__close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+.c-modal__content {
+  padding: 20px;
+}
+/*******************************************
+  NAVIGATION
+  e.g. tabs, pagination, accordion
+********************************************/
 /*******************************************
   INPUTS
 ********************************************/
@@ -4634,6 +4715,22 @@ hr {
   keep this file empty
 ********************************************/
 /* Style Guide classes */
+.sg-header {
+  position: relative;
+  padding-right: 70px;
+}
+.sg-header:after {
+  content: "";
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: -7px;
+  right: 0;
+  background-image: url('../images/logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
 .sg-back-link {
   position: fixed;
   bottom: 5px;

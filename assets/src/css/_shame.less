@@ -4,6 +4,17 @@
 ********************************************/
 
 /* Style Guide classes */
+
+.sg-header { position: relative; padding-right: 70px; }
+.sg-header:after {
+  content: ""; width: 50px; height: 50px;
+  position: absolute; top: -7px; right: 0;
+  background-image: url('../images/logo.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+}
+
 .sg-back-link { position: fixed; bottom: 5px; right: 10px; }
 
 .sg-color { 
