@@ -4115,9 +4115,10 @@ hr {
 }
 .c-modal__close {
   position: absolute;
-  top: 5px;
-  right: 5px;
+  top: 10px;
+  right: 10px;
   cursor: pointer;
+  color: #fff;
 }
 .c-modal__content {
   padding: 20px;
