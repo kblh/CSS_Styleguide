@@ -3766,6 +3766,9 @@ fieldset {
 /*******************************************
   BASIC HTML ELEMENTS
 ********************************************/
+html {
+  scroll-behavior: smooth;
+}
 body {
   font: normal 400 1em 'OpenSans', sans-serif;
   color: #212121;
